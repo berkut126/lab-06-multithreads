@@ -39,6 +39,11 @@ add_library(header INTERFACE
 add_executable(source
         ${CMAKE_CURRENT_SOURCE_DIR}/sources/source.cpp
         )
+add_executable(tests
+        ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
+        )
+        
+target_link_libraries(tests GTest::main)
 
 target_include_directories(source
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
